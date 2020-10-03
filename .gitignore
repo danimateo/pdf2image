@@ -76,7 +76,6 @@ test/output/**
 
 .archive
 
-dist
 dump
 
 .DS_Store
