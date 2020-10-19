@@ -22,7 +22,9 @@ export class Graphics {
 
   private compression = 'jpeg';
 
-  private gm: gm.SubClass = gm.subClass({ imageMagick: false });
+  private gm: gm.SubClass = gm.subClass({ imageMagick: false })
+
+  gmClass = {imageMagick: false};
 
   public generateValidFilename(page?: number): string {
     if (typeof page === 'number') {
@@ -160,7 +162,7 @@ export class Graphics {
   public setGMClass(gmClass: string | boolean): Graphics {
     if (typeof gmClass === 'boolean') {
       this.gm = gm.subClass({ imageMagick: gmClass });
-
+      this.gmClass = {imageMagick: gmClass};
       return this;
     }
 

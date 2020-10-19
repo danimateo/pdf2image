@@ -14,6 +14,9 @@ export declare class Graphics {
     private saveFilename;
     private compression;
     private gm;
+    gmClass: {
+        imageMagick: boolean;
+    };
     generateValidFilename(page?: number): string;
     gmBaseCommand(stream: fs.ReadStream, filename: string): gm.State;
     toBase64(stream: fs.ReadStream, page?: number): Promise<ToBase64Response>;
